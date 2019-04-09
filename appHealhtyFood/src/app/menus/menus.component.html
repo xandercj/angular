@@ -1,0 +1,17 @@
+<h2>Menus</h2>
+
+<table class="table table-striped table-bordered menus">
+	<thead>
+	<tr><th>Id</th><th>Menú</th></tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let menu of menus" 
+		[class.selected]="menu === selectedMenu"
+		(click)="onSelect(menu)">
+			<td><span class="badge">{{ menu.id }}</span></td>
+			<td>{{ menu.name }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<app-menu-detail [menu]="selectedMenu"></app-menu-detail>
